@@ -21,38 +21,24 @@ public class Radio {
     }
 
     public void next() {
+        if ((currentStation + 1) < 9) {
+            currentStation = currentStation + 1;
+        }
         if ((currentStation + 1) > 9) {
             currentStation = 0;
-            return;
         }
-        if ((currentStation +1) < 9) {
-            currentStation = currentStation + 1;
-            return;
-        }
+        return;
     }
 
     public void prev() {
-        if ((currentStation - 1) < 0) {
-            currentStation = 9;
-            return;
-        }
         if (currentStation > 0) {
             currentStation = currentStation - 1;
-            return;
         }
+        if ((currentStation - 1) < 0) {
+            currentStation = 9;
+        }
+        return;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public int currentVolume;
