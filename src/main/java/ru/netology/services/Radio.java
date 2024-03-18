@@ -21,24 +21,37 @@ public class Radio {
     }
 
     public void next() {
-        if (currentStation >= 9) {
+        if ((currentStation + 1) > 9) {
             currentStation = 0;
             return;
         }
-        if (currentStation < 9) {
+        if ((currentStation +1) < 9) {
             currentStation = currentStation + 1;
+            return;
         }
     }
 
     public void prev() {
-        if (currentStation == 0) {
+        if ((currentStation - 1) < 0) {
             currentStation = 9;
             return;
         }
         if (currentStation > 0) {
             currentStation = currentStation - 1;
+            return;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -63,21 +76,21 @@ public class Radio {
     public void increaseVolume() {
         if (currentVolume == 100) {
             currentVolume = 100;
-            return;
         }
         if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
+        return;
     }
 
     public void decreaseVolume() {
-        if (currentVolume == 0) {
+        if (currentVolume <= 0) {
             currentVolume = 0;
-            return;
         }
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         }
+        return;
     }
 
 }
