@@ -93,6 +93,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Test
     public  void shouldSetHighVolumeLimit() {
@@ -180,5 +181,24 @@ public class RadioTest {
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Test
+    public  void setCountOfStation18() {
+        Radio radio = new Radio(18);
+
+        Assertions.assertEquals(18, radio.getCountStation());
+        Assertions.assertEquals(0, radio.getMinStation());
+        Assertions.assertEquals(9, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getCurrentStation());
+    }
+
+    @Test
+    public  void countOfStationNotSetted() {
+        Radio radio = new Radio();
+
+        Assertions.assertEquals(10, radio.getCountStation());
     }
 }
